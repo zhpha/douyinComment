@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>抖音直播评论提取</title>
+    <style>
+        body {
+            width: 300px;
+            padding: 15px;
+            font-family: 'Microsoft YaHei', sans-serif;
+            background-color: #f5f5f5;
+        }
+        h2 {
+            margin-top: 0;
+            color: #161823;
+            font-size: 18px;
+            text-align: center;
+        }
+        .status-box {
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        #status-text {
+            font-weight: bold;
+            color: #fe2c55; /* 抖音红 */
+        }
+        #count-text {
+            display: block;
+            margin-top: 5px;
+            font-size: 12px;
+            color: #666;
+        }
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        button {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: opacity 0.2s;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        #toggle-btn {
+            background-color: #fe2c55;
+            color: white;
+            font-weight: bold;
+        }
+        #toggle-btn.active {
+            background-color: #666;
+        }
+        .secondary-btn {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            color: #333;
+        }
+        .danger-btn {
+            background-color: #fff;
+            border: 1px solid #ffcccc;
+            color: #d00;
+        }
+    </style>
+</head>
+<body>
+    <h2>评论提取器</h2>
+    
+    <div class="status-box">
+        <div>状态: <span id="status-text">未运行</span></div>
+        <span id="count-text">已保存: 0 条</span>
+    </div>
+
+    <div class="btn-group">
+        <button id="open-room-btn" style="display: none; background-color: #161823; color: white;">打开指定直播间</button>
+        <button id="toggle-btn">开始提取</button>
+        <button id="open-viewer" class="secondary-btn" style="border-color: #00b86b; color: #00b86b;">查看数据 (表格)</button>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "抖音直播评论提取器",
+  "version": "1.0",
+  "description": "提取抖音直播间评论并保存到 IndexedDB",
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "*://live.douyin.com/*",
+    "*://www.douyin.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://live.douyin.com/*",
+        "*://www.douyin.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end",
+    "default_icon": "icon.png"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "抖音评论提取"
+  }
+}
